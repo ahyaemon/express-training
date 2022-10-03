@@ -1,0 +1,24 @@
+doctype html
+html(lang="ja")
+    head
+        meta(charset="UTF-8")
+        title home
+    body
+        h1 ホーム
+        div
+            p こんにちは、#{name}さん
+        hr
+        div
+            p xss 脆弱性のあるページに遷移（クエリパラメータを画面に表示する）
+            form(action="/search" method="get")
+                input(type="text" name="search")
+                button(type="submit") search
+        hr
+        div
+            p csrf でレモンをカートに追加できるかのテスト
+            form(action="/add_to_cart" method="post")
+                button(type="submit") レモンをカートに追加
+        hr
+        div
+            form(action="/logout" method="post")
+                button(type="submit") logout

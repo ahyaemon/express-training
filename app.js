@@ -7,7 +7,7 @@ const privateRouter = require('./routers/private-router')
 const auth = require('./auth')
 
 const app = express()
-const port = 3000
+const port = 3333
 
 app.set('views', './views')
 app.set('view engine', 'pug')

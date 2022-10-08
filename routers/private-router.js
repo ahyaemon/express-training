@@ -1,4 +1,5 @@
 const express = require("express");
+const {addAmountToCart, getAmountFromCart} = require("../cart");
 
 const privateRouter = express.Router()
 
@@ -25,7 +26,9 @@ privateRouter.get('/search', (req, res) => {
 
 // TODO add_to_cart を作る。で、ハッシュマップか何かに追加して、遷移後のページで結果を表示する
 privateRouter.post('/add_to_cart', (req, res) => {
-    res.render('cart', { amount: 1 })
+    const username = req.user.username
+    addAmountToCart(username)
+    res.render('cart', { amount: getAmountFromCart(username) })
 })
 
 module.exports = privateRouter

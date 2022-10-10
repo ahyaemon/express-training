@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon -e js,html,pug app.js"
+    "dev": "nodemon -e js,html,pug app.js",
+    "malicious": "node malicious.js"
   },
   "author": "",
   "license": "ISC",
